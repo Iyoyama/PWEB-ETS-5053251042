@@ -1,8 +1,8 @@
 # Bismillah PDD Sukses
 
--**Nama:** AHMAD BALYA MALKAN
--**NRP:** 5053251042
--**Link GitHub Pages:** (https://iyoyama.github.io/PWEB-ETS-5053251042/)
+- **Nama:** AHMAD BALYA MALKAN
+- **NRP:** 5053251042
+- **Link GitHub Pages:** (https://iyoyama.github.io/PWEB-ETS-5053251042/)
 
 ## Persona
 
