@@ -6,7 +6,7 @@
 /* ---------- 1. DATA & KONSTANTA ---------- */
 
 const KUNCI_STORAGE = "transaksi-kaslepas";
-const kategori = {
+const KATEGORI = {
   pemasukan: [
     "Jasa Fotografi",
     "Jasa Videografi",
