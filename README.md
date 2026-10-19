@@ -10,7 +10,7 @@
  
 **Pekerja lepas (freelancer)**
  
-[TULIS 2–3 KALIMAT DENGAN KATA-KATAMU SENDIRI: siapa persona ini dan apa masalah keuangannya.]
+BUAT PDD AJA
  
 ## Fitur
  
