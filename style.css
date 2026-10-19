@@ -1,0 +1,153 @@
+:root{
+    --ink:#14262b;
+    --paper:#eef3f4;
+    --card:#fff;
+    --line:#d3dde0;
+    --teal:#0e6b72;
+    --amber:#b86b00;
+    --red:#b3261e
+}
+
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font:16px/1.5 system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink)
+}
+
+header{
+    background:var(--ink);
+    color:#fff;
+    padding:20px 16px
+}
+
+header h1{
+    margin:0;
+    font-size:1.5rem
+}
+
+header p{margin:4px 0 0;
+    opacity:.75;
+    font-size:.9rem
+}
+
+main{
+    max-width:760px;
+    margin:0 auto;
+    padding:16px
+}
+
+.ringkasan{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-bottom:16px
+}
+
+.ringkasan div{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    min-width:0
+}
+
+.ringkasan span{
+    font-size:.8rem;
+    color:#506066
+}
+
+.ringkasan strong{
+    font-size:1.15rem;
+    overflow-wrap:anywhere
+}
+
+.ringkasan .piutang{
+    background:#fff6e5;
+    border-color:#ecc980
+}
+
+.piutang strong{
+    color:var(--amber);
+    font-size:1.4rem
+}
+
+.kartu{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:16px;
+    margin-bottom:16px
+}
+
+h2{
+    margin:0 0 12px;
+    font-size:1.1rem
+}
+
+form{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px
+}
+
+label{
+    display:flex;
+    flex-direction:column;
+    font-size:.85rem;
+    gap:4px;min-width:0
+}
+
+.lebar,.error,form button,.blok{
+    grid-column:1/-1
+}
+
+.blok{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px
+}
+
+.blok[hidden]{display:none}
+input,select,button{
+    font:inherit;
+    padding:9px;border:1px solid #9fb0b5;
+    border-radius:4px;
+    width:100%
+}
+button{
+    cursor:pointer;
+    background:var(--teal);
+    color:#fff;border:0;
+    font-weight:600
+}
+button:focus-visible,input:focus-visible,select:focus-visible{
+    outline:3px solid #f2b54a;
+    outline-offset:1px
+}
+.error{
+    color:var(--red);
+    margin:0;
+    min-height:1.2em;
+    font-size:.9rem
+}
+
+input.salah,select.salah{border-color:var(--red)}
+ul{list-style:none;margin:0;padding:0}
+li{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:12px 0;border-top:1px solid var(--line)}
+li:first-child{border-top:0}
+.nom{font-weight:700;text-align:right}
+.masuk{color:var(--teal)}.keluar{color:var(--red)}.tunggu{color:var(--amber)}
+.meta{font-size:.85rem;color:#506066;overflow-wrap:anywhere}
+.aksi{grid-column:1/-1;display:flex;gap:8px}
+.aksi button{width:auto;padding:6px 12px;font-size:.85rem}
+.aksi .hapus{background:#fff;color:var(--red);border:1px solid var(--red)}
+.badge{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:10px;background:#ffe9bd;color:#7a4700;margin-left:6px}
+.badge.ok{background:#d5efe9;color:#0b5a50}
+.kosong{color:#506066;padding:8px 0}
+@media(min-width:600px){.ringkasan{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:380px){form,.blok{grid-template-columns:1fr}}

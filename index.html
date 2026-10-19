@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kas Freelance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Kas Freelance</h1><p>Catat proyek, tagih klien, pantau uang yang belum masuk.</p></header>
+<main>
+  <section class="ringkasan" aria-live="polite">
+    <div><span>Pemasukan (lunas)</span><strong id="totalMasuk">Rp0</strong></div>
+    <div><span>Pengeluaran</span><strong id="totalKeluar">Rp0</strong></div>
+    <div><span>Saldo</span><strong id="saldo">Rp0</strong></div>
+    <div class="piutang"><span>Piutang klien</span><strong id="totalPiutang">Rp0</strong><small id="jumlahPiutang"></small></div>
+  </section>
+
+  <section class="kartu">
+    <h2>Tambah transaksi</h2>
+    <form id="form" novalidate>
+      <label>Tanggal<input type="date" id="tanggal"></label>
+      <label>Jenis
+        <select id="jenis"><option value="pemasukan">Pemasukan</option><option value="pengeluaran">Pengeluaran</option></select>
+      </label>
+      <label>Kategori
+        <select id="kategori">
+          <option>Proyek</option><option>Retainer</option><option>Software</option>
+          <option>Transport</option><option>Makan</option><option>Lainnya</option>
+        </select>
+      </label>
+      <label>Nominal (Rp)<input type="number" id="nominal" min="0" step="1" inputmode="numeric"></label>
+      <div id="blokTagihan" class="blok">
+        <label>Klien<input type="text" id="klien" placeholder="Nama klien"></label>
+        <label>Status pembayaran
+          <select id="status"><option value="lunas">Lunas</option><option value="belum dibayar">Belum dibayar</option></select>
+        </label>
+      </div>
+      <label class="lebar">Catatan (opsional)<input type="text" id="catatan"></label>
+      <p id="error" class="error" role="alert"></p>
+      <button type="submit">Simpan transaksi</button>
+    </form>
+  </section>
+
+  <section class="kartu">
+    <h2>Daftar transaksi</h2>
+    <ul id="daftar"></ul>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
