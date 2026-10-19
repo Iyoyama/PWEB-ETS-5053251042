@@ -1,8 +1,8 @@
 # KasLepas
 
-**Nama:** [ISI NAMA LENGKAP]
-**NRP:** [ISI NRP]
-**Link GitHub Pages:** [ISI SETELAH PAGES AKTIF]
+**Nama:** AHMAD BALYA MALKAN
+**NRP:** 5053251042
+**Link GitHub Pages:** (https://iyoyama.github.io/PWEB-ETS-5053251042/)
 
 ## Persona
 
