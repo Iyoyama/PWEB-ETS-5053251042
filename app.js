@@ -6,7 +6,33 @@
 /* ---------- 1. DATA & KONSTANTA ---------- */
 
 const KUNCI_STORAGE = "transaksi-kaslepas";
-const KATEGORI = ["Proyek", "Makan", "Transportasi", "Internet & Software", "Peralatan", "Lainnya"];
+const kategori = {
+  pemasukan: [
+    "Jasa Fotografi",
+    "Jasa Videografi",
+    "Jasa Editing Video Kategori 1",
+    "Jasa Editing Video Kategori 2",
+    "Jasa Editing Video Kategori 3",
+    "Jasa Editing Warna Foto",
+    "Jasa Editing Foto Profesional Kategori 1",
+    "Jasa Editing Foto Profesional Kategori 2",
+    "Jasa Editing Foto Profesional Kategori 3",
+    "Jasa Desain Grafis Kategori 1",
+    "Jasa Desain Grafis Kategori 2",
+    "Jasa Desain Grafis Kategori 3",
+    "Jasa Motion Maker 1",
+    "Jasa Motion Maker 2",
+    "Jasa Motion Maker 3"
+  ],
+  pengeluaran: [
+    "Peralatan & Perawatan",
+    "Software & Langganan",
+    "Transportasi",
+    "Internet & Pulsa",
+    "Makan",
+    "Lainnya"
+  ]
+};
 const BELUM = "belum dibayar"; // status tagihan klien
 const LUNAS = "lunas";
 
@@ -224,12 +250,26 @@ function tambahTransaksi(event) {
 function resetForm() {
   form.reset();
   inputTanggal.value = hariIni();
-  aturBarisStatus();
+  ubahJenis();
 }
 
 // Pilihan status hanya relevan untuk pemasukan
 function aturBarisStatus() {
   barisStatus.hidden = inputJenis.value !== "pemasukan";
+}
+
+// Isi ulang dropdown kategori sesuai jenis yang dipilih
+function isiKategoriForm() {
+  inputKategori.innerHTML = '<option value="">-- Pilih kategori --</option>';
+  KATEGORI[inputJenis.value].forEach(function (nama) {
+    inputKategori.add(new Option(nama, nama));
+  });
+}
+
+// Dipanggil saat jenis berubah (dan saat halaman dibuka / form direset)
+function ubahJenis() {
+  aturBarisStatus();
+  isiKategoriForm();
 }
 
 // W3: hapus dengan konfirmasi
@@ -314,7 +354,7 @@ function impor() {
 /* ---------- 10. PASANG EVENT LISTENER ---------- */
 
 form.addEventListener("submit", tambahTransaksi);
-inputJenis.addEventListener("change", aturBarisStatus);
+inputJenis.addEventListener("change", ubahJenis);
 daftar.addEventListener("click", klikDaftar);
 
 filterKata.addEventListener("input", renderDaftar);
@@ -326,15 +366,15 @@ inputImpor.addEventListener("change", impor);
 
 /* ---------- 11. MULAI ---------- */
 
-function isiPilihanKategori() {
-  KATEGORI.forEach(function (nama) {
-    inputKategori.add(new Option(nama, nama));
+function isiFilterKategori() {
+  const semuaKategori = KATEGORI.pemasukan.concat(KATEGORI.pengeluaran);
+  semuaKategori.forEach(function (nama) {
     filterKategori.add(new Option(nama, nama));
   });
 }
 
 muatData();
-isiPilihanKategori();
+isiFilterKategori();
 inputTanggal.value = hariIni();
-aturBarisStatus();
+ubahJenis();
 render();
